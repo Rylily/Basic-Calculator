@@ -1,0 +1,58 @@
+def numberround():
+    if result[-1] == "0" and (result[-2]) == ".":
+        print(round(float(result)))
+    else:
+        print(float(result))
+        print()
+
+
+print("Select Operation")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+print()
+while True:
+    operation = int(input("Please input 1-4: "))
+    if 1 <= operation <= 4:
+        while True:
+            try:
+                num1 = float(input("Please enter the first number: "))
+                num2 = float(input("Please enter the second number: "))
+                if operation == 1:
+                    try:
+                        result = str(num1+num2)
+                        numberround()
+                        break
+                    except Exception:
+                        print("Undefined")
+                        break
+                elif operation == 2:
+                    try:
+                        result = str(num1-num2)
+                        numberround()
+                        break
+                    except Exception:
+                        print("Undefined")
+                        break
+                elif operation == 3:
+                    try:
+                        result = str(num1*num2)
+                        numberround()
+                        break
+                    except Exception:
+                        print("Undefined")
+                        break
+                elif operation == 4:
+                    try:
+                        result = str(num1/num2)
+                        numberround()
+                        break
+                    except Exception:
+                        print("Undefined")
+                        break
+            except ValueError:
+                print("Input not valid. Please enter again")
+    else:
+        print("Input not valid. Please try again")
+        print()
